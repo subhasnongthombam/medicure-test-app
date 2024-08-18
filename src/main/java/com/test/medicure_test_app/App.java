@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  * Hello world!
@@ -12,8 +13,12 @@ public class App
 {
     public static void main( String[] args ) throws InterruptedException
     {
-    	WebDriver driver = new ChromeDriver();
-		
+    	
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--headless");
+    	
+    	WebDriver driver = new ChromeDriver(options);
+    	
 		//1.Open the browser and get to the url
         driver.get("http://3.17.71.241:8082/contact.html");
         Thread.sleep(3000);
